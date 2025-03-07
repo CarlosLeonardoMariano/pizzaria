@@ -3,7 +3,7 @@ import { CreateProdutosServices } from "../../services/produtos/createProdutosSe
 
 class CreateProdutosController{
     async Handle(req, res){
-        const {name, price, descrição, category} = req.body
+        const {name, price, descricao, category} = req.body
         const createProdutosControll = new CreateProdutosServices();
 
         if(!req.file){
@@ -16,8 +16,8 @@ class CreateProdutosController{
             const produtos = await createProdutosControll.execute(
                 {name,
                 price,
-                descrição,
-                banner: '',
+                descricao,
+                banner: filename,
                 category
                 });
         

@@ -12,7 +12,7 @@ export default {
                 destination: (req, file, callback) => {
                     const __filename = fileURLToPath(import.meta.url); // Obtém o arquivo atual
                     const __dirname = dirname(__filename); // Obtém o diretório atual
-                    callback(null, resolve(__dirname, '..', '..', folder)); // Caminho correto
+                    callback(null, resolve(__dirname, '..','..', folder)); // Caminho correto
                 },
                 filename: (request, file, callback) => {
                     const fileHash = crypto.randomBytes(16).toString("hex");
@@ -25,3 +25,4 @@ export default {
         };
     }
 }
+
